@@ -3,7 +3,8 @@ package com.harleylizard.livelihood.common
 import eu.pb4.polymer.blocks.api.BlockModelType
 
 object LivelihoodModels {
-    val shortGrass = Model.modelOf("block/short_grass", BlockModelType.PLANT_BLOCK)
-    val mediumGrass = Model.modelOf("block/medium_grass", BlockModelType.PLANT_BLOCK)
+    val smallGrass = Model.modelOf("block/small_grass", BlockModelType.BIOME_PLANT_BLOCK)
+    val mediumGrass = Model.modelOf("block/medium_grass", BlockModelType.BIOME_PLANT_BLOCK)
+    val weeds = Model.modelOf("block/weeds", BlockModelType.BIOME_PLANT_BLOCK)
 
 }

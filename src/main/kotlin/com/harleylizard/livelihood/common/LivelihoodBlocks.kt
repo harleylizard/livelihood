@@ -4,6 +4,7 @@ package com.harleylizard.livelihood.common
 
 import com.harleylizard.livelihood.common.Livelihood.Companion.resourceLocation
 import com.harleylizard.livelihood.common.block.LivelihoodBlock
+import com.harleylizard.livelihood.common.block.PlantBlock
 import net.minecraft.core.Registry
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
@@ -17,12 +18,14 @@ object LivelihoodBlocks {
 
     private val Block.properties get() = Properties.ofFullCopy(this)
 
-    val smallGrass = LivelihoodBlock(Blocks.SHORT_GRASS.properties.setId("small_grass".resourceKey), Blocks.SHORT_GRASS, LivelihoodModels.shortGrass)
-    val mediumGrass = LivelihoodBlock(Blocks.SHORT_GRASS.properties.setId("medium_grass".resourceKey), Blocks.SHORT_GRASS, LivelihoodModels.mediumGrass)
+    val smallGrass = PlantBlock(Blocks.SHORT_GRASS.properties.setId("small_grass".resourceKey), LivelihoodModels.smallGrass)
+    val mediumGrass = PlantBlock(Blocks.SHORT_GRASS.properties.setId("medium_grass".resourceKey), LivelihoodModels.mediumGrass)
+    val weeds = PlantBlock(Blocks.SHORT_GRASS.properties.setId("weeds".resourceKey), LivelihoodModels.weeds)
 
     fun registerAll() {
         register("small_grass", smallGrass)
         register("medium_grass", mediumGrass)
+        register("weeds", weeds)
 
     }
 

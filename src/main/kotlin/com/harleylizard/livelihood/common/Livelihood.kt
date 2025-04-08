@@ -17,11 +17,12 @@ class Livelihood : ModInitializer {
 
         PolymerItemGroupUtils
             .builder()
-            .icon(LivelihoodItems.shortGrass::getDefaultInstance)
+            .icon(LivelihoodItems.smallGrass::getDefaultInstance)
             .title(Component.translatable("itemGroup.livelihood"))
             .displayItems { itemDisplayParameters, output ->
-                output.accept(LivelihoodItems.shortGrass)
+                output.accept(LivelihoodItems.smallGrass)
                 output.accept(LivelihoodItems.mediumGrass)
+                output.accept(LivelihoodItems.weeds)
 
             }
             .build()
