@@ -6,5 +6,6 @@ object LivelihoodModels {
     val smallGrass = Model.modelOf("block/small_grass", BlockModelType.BIOME_PLANT_BLOCK)
     val mediumGrass = Model.modelOf("block/medium_grass", BlockModelType.BIOME_PLANT_BLOCK)
     val weeds = Model.modelOf("block/weeds", BlockModelType.BIOME_PLANT_BLOCK)
+    val peat = Model.modelOf("block/peat", BlockModelType.FULL_BLOCK)
 
 }

@@ -3,8 +3,12 @@ package com.harleylizard.livelihood.common
 import eu.pb4.polymer.core.api.item.PolymerItemGroupUtils
 import eu.pb4.polymer.resourcepack.api.PolymerResourcePackUtils
 import net.fabricmc.api.ModInitializer
+import net.minecraft.core.BlockPos
 import net.minecraft.network.chat.Component
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.tags.BlockTags
+import net.minecraft.world.level.WorldGenLevel
+import net.minecraft.world.level.block.state.BlockState
 
 class Livelihood : ModInitializer {
 
@@ -14,6 +18,7 @@ class Livelihood : ModInitializer {
 
         LivelihoodBlocks.registerAll()
         LivelihoodItems.registerAll()
+        LivelihoodFeatures.registerAll()
 
         PolymerItemGroupUtils
             .builder()
@@ -23,6 +28,7 @@ class Livelihood : ModInitializer {
                 output.accept(LivelihoodItems.smallGrass)
                 output.accept(LivelihoodItems.mediumGrass)
                 output.accept(LivelihoodItems.weeds)
+                output.accept(LivelihoodItems.peat)
 
             }
             .build()
@@ -37,5 +43,12 @@ class Livelihood : ModInitializer {
 
         val String.resourceLocation get() = ResourceLocation.fromNamespaceAndPath(MOD_ID, this)
 
+        fun set(level: WorldGenLevel, blockPos: BlockPos, blockState: BlockState) {
+            if (blockState.canSurvive(level, blockPos)) {
+                if (level.isEmptyBlock(blockPos) || level.getBlockState(blockPos).`is`(BlockTags.REPLACEABLE)) {
+                    level.getChunk(blockPos).setBlockState(blockPos, blockState, false)
+                }
+            }
+        }
     }
 }

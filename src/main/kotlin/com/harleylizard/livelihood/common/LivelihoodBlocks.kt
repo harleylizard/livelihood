@@ -21,11 +21,13 @@ object LivelihoodBlocks {
     val smallGrass = PlantBlock(Blocks.SHORT_GRASS.properties.setId("small_grass".resourceKey), LivelihoodModels.smallGrass)
     val mediumGrass = PlantBlock(Blocks.SHORT_GRASS.properties.setId("medium_grass".resourceKey), LivelihoodModels.mediumGrass)
     val weeds = PlantBlock(Blocks.SHORT_GRASS.properties.setId("weeds".resourceKey), LivelihoodModels.weeds)
+    val peat = LivelihoodBlock(Blocks.DIRT.properties.setId("peat".resourceKey), Blocks.DIRT, LivelihoodModels.peat)
 
     fun registerAll() {
         register("small_grass", smallGrass)
         register("medium_grass", mediumGrass)
         register("weeds", weeds)
+        register("peat", peat)
 
     }
 
