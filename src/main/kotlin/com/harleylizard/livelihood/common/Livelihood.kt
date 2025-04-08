@@ -29,6 +29,7 @@ class Livelihood : ModInitializer {
                 output.accept(LivelihoodItems.mediumGrass)
                 output.accept(LivelihoodItems.weeds)
                 output.accept(LivelihoodItems.peat)
+                output.accept(LivelihoodItems.giantFlowerStem)
 
             }
             .build()
@@ -45,7 +46,7 @@ class Livelihood : ModInitializer {
 
         fun set(level: WorldGenLevel, blockPos: BlockPos, blockState: BlockState) {
             if (blockState.canSurvive(level, blockPos)) {
-                if (level.isEmptyBlock(blockPos) || level.getBlockState(blockPos).`is`(BlockTags.REPLACEABLE)) {
+                if (level.getFluidState(blockPos).isEmpty && (level.isEmptyBlock(blockPos) || level.getBlockState(blockPos).`is`(BlockTags.REPLACEABLE))) {
                     level.getChunk(blockPos).setBlockState(blockPos, blockState, false)
                 }
             }

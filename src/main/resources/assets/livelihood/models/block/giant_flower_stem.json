@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "livelihood:block/giant_flower_stem_top",
+    "side": "livelihood:block/giant_flower_stem"
+  }
+}

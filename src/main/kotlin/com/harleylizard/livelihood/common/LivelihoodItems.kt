@@ -19,12 +19,14 @@ object LivelihoodItems {
     val mediumGrass = LivelihoodBlocks.mediumGrass.blockItemOf(Properties().setId("medium_grass".resourceKey))
     val weeds = LivelihoodBlocks.weeds.blockItemOf(Properties().setId("weeds".resourceKey))
     val peat = LivelihoodBlocks.peat.blockItemOf(Properties().setId("peat".resourceKey))
+    val giantFlowerStem = LivelihoodBlocks.giantFlowerStem.blockItemOf(Properties().setId("giant_flower_stem".resourceKey))
 
     fun registerAll() {
         register("small_grass", smallGrass)
         register("medium_grass", mediumGrass)
         register("weeds", weeds)
         register("peat", peat)
+        register("giant_flower_stem", giantFlowerStem)
 
     }
 

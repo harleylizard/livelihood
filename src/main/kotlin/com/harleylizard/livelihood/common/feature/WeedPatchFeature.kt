@@ -12,7 +12,7 @@ import kotlin.math.ceil
 class WeedPatchFeature : Feature<NoneFeatureConfiguration>(NoneFeatureConfiguration.CODEC) {
     private val weedBlocks = listOf(
         arrayOf(Blocks.SHORT_GRASS),
-        arrayOf(Blocks.SHORT_GRASS, LivelihoodBlocks.weeds, ),
+        arrayOf(Blocks.SHORT_GRASS, Blocks.SHORT_GRASS, LivelihoodBlocks.weeds),
         arrayOf(LivelihoodBlocks.mediumGrass, LivelihoodBlocks.smallGrass),
         arrayOf(LivelihoodBlocks.smallGrass)
     )
