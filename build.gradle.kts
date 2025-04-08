@@ -36,7 +36,7 @@ snail {
         version = "1.0-SNAPSHOT"
         description = "."
         entryPoints {
-            main = listOf("com.harleylizard.livelihood.common.livelihood")
+            main = listOf("com.harleylizard.livelihood.common.Livelihood")
         }
     }
 }
